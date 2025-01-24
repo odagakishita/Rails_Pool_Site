@@ -1,0 +1,18 @@
+<h1>プール一覧</h1>
+
+<div class="pools-list">
+  <% if @pools.any? %>
+    <% @pools.each do |pool| %>
+      <div class="pool-box">
+        <h2><%= pool.name %></h2>
+        <p>住所: <%= pool.address %></p>
+        <p>大人料金: <%= pool.adult_price %>円</p>
+        <p>子供料金: <%= pool.child_price %>円</p>
+        <p>屋内: <%= pool.indoor ? "あり" : "なし" %> / 屋外: <%= pool.outdoor ? "あり" : "なし" %></p>
+        <%= link_to "このプールを見る", city_pool_path(pool.city.slug, pool), class: "btn btn-pool" %>
+      </div>
+    <% end %>
+  <% else %>
+    <p>条件に一致するプールは見つかりませんでした。</p>
+  <% end %>
+</div>

@@ -1,0 +1,148 @@
+
+<% svg_data = JSON.parse(File.read(Rails.root.join('public', 'svg_paths', 'cities.json'))) %>
+<div class="svg-container">
+  <div class="filtering-container">
+    <div class="filter-box">
+      <h2 class="filter-title">条件検索</h2>
+      <%= form_with(url: search_pools_path, method: :get, local: true, class: "filter-form") do |f| %>
+        <div class="form-group">
+          <%= f.label :city, "市を選択" %>
+          <%= f.select :city, options_for_select(City.all.pluck(:name, :slug)), { include_blank: "すべて" }, class: "form-control" %>
+        </div>
+
+        <div class="form-group inline-form-group">
+          <%= f.label :outdoor, "屋外プールあり" %>
+          <%= f.check_box :outdoor, class: "form-check-input" %>
+        </div>
+
+        <div class="form-group inline-form-group">
+          <%= f.label :sauna, "サウナ併設" %>
+          <%= f.check_box :sauna, class: "form-check-input" %>
+        </div>
+
+        <div class="form-group inline-form-group">
+          <%= f.label :fifty, "50mプールあり" %>
+          <%= f.check_box :fifty, class: "form-check-input" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :max_price, "最高料金 (大人)" %>
+          <%= f.number_field :max_price, class: "form-control", placeholder: "例: 1000" %>
+        </div>
+    
+        <%= f.submit "検索", class: "filter-btn btn-primary" %>
+      <% end %>
+    </div>
+    
+  </div>
+
+<!-- 対応表の配置 -->
+  <div class="svg-box">
+    <svg class="map-svg" width="512.00" height="512.00" viewBox="270.00 70.00 1500.00 1600.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <% svg_data.each do |id, paths| %>
+        <g stroke-linecap="round" id="<%= id %>" onclick="window.location.href='/cities/<%= id %>'">
+          <% paths.each do |path_data| %>
+            <path d="<%= path_data %>" />
+          <% end %>
+        </g>
+      <% end %>
+      
+    </svg>
+    <div class="legend-container-right">
+      <div class="city-legend-item">
+        <span class="color-box" style="background-color: rgb(239, 112, 115);"></span> 川崎市
+      </div>
+      <div class="city-legend-item">
+        <span class="color-box" style="background-color: rgb(255, 163, 102);"></span> 横浜市
+      </div>
+      <div class="city-legend-item">
+        <span class="color-box" style="background-color: rgb(170, 215, 144);"></span> 三浦市
+      </div>
+      <div class="city-legend-item">
+        <span class="color-box" style="background-color: rgb(141, 199, 182);"></span> 横須賀市
+      </div>
+      <div class="city-legend-item">
+        <span class="color-box" style="background-color: rgb(137, 182, 223);"></span> 藤沢市
+      </div>
+      <div class="city-legend-item">
+        <span class="color-box" style="background-color: rgb(153, 153, 255);"></span> 茅ヶ崎市
+      </div>
+      <div class="city-legend-item">
+        <span class="color-box" style="background-color: rgb(191, 153, 255);"></span> 鎌倉市
+      </div>
+      <div class="city-legend-item">
+        <span class="color-box" style="background-color: rgb(127, 199, 255);"></span> 大和市
+      </div>
+      <div class="city-legend-item">
+        <span class="color-box" style="background-color: rgb(214, 153, 255);"></span> 逗子市
+      </div>
+    
+    </div>
+    <div class="legend-container-left">
+      <div class="city-legend-item">
+        <span class="color-box" style="background-color: rgb(250, 221, 117);"></span> 相模原市
+      </div>
+      <div class="city-legend-item">
+        <span class="color-box" style="background-color: rgb(223, 137, 191);"></span> 平塚市
+      </div>
+      <div class="city-legend-item">
+        <span class="color-box" style="background-color: rgb(255, 182, 193);"></span> 小田原市
+      </div>
+      <div class="city-legend-item">
+        <span class="color-box" style="background-color: rgb(182, 223, 127);"></span> 厚木市
+      </div>
+      <div class="city-legend-item">
+        <span class="color-box" style="background-color: rgb(255, 214, 142);"></span> 伊勢原市
+      </div>
+      <div class="city-legend-item">
+        <span class="color-box" style="background-color: rgb(153, 223, 223);"></span> 秦野市
+      </div>
+      <div class="city-legend-item">
+        <span class="color-box" style="background-color: rgb(255, 199, 163);"></span> 座間市
+      </div>
+      <div class="city-legend-item">
+        <span class="color-box" style="background-color: rgb(223, 250, 127);"></span> 海老名市
+      </div>
+      <div class="city-legend-item">
+        <span class="color-box" style="background-color: rgb(200, 200, 200);"></span> その他
+      </div>
+    
+    </div>
+    
+  </div>
+</div>
+
+<div class="poollife-container">
+  <h2 class="poollife-title">みんなの遊泳記録</h2>
+  <hr class="poollife-divider">
+  <p>みんなの遊泳記録とは？</p>
+  <p>当サイトの会員になると、プールへのレビューや自分の市民プールライフを公開することができます！</p>
+  <div class="posts-preview">
+    <% if @posts.present? %>
+      <% @posts.first(3).each do |post| %> <!-- 最初の3件のみ表示 -->
+        <div class="post-preview-box">
+          <h2><%= link_to post.title, post_path(post), class: 'post-title' %></h2>
+          <p>種類: <%= post.category %></p>
+          <p>投稿日: <%= post.created_at.strftime("%Y年%m月%d日") %></p>
+        </div>
+      <% end %>
+    <% else %>
+      <p>投稿がまだありません。</p>
+    <% end %>
+
+
+  </div>
+  <div class="post-buttons-container">
+    <% if logged_in? %>
+      <%= link_to "ルーティーンを書く", new_routine_posts_path, class: "btn routine-button" %>
+      <%= link_to "レビューを書く", new_review_posts_path, class: "btn review-button" %>
+      <%= link_to "もっと見る", posts_path, class: "btn make-button" %>
+    <% else %>
+      <%= link_to "ログインして書く！", login_path, class: "btn btn-login" %>
+      <%= link_to "新規登録して書く！", new_user_path, class: "btn btn-signup" %>
+      <%= link_to "もっと見る", posts_path, class: "btn make-button" %>
+    <% end %>
+  </div>
+  
+  
+</div>

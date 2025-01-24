@@ -1,0 +1,24 @@
+<header>
+  <div class="site-header">
+    <div class="wrapper site-header__wrapper">
+      <!-- 左端のボタン -->
+      <div class="auth-buttons">
+        <% if logged_in? %>
+          <%= link_to "ログアウト", logout_path, method: :delete, class: "btn btn-logout" %>
+          <%= link_to "マイページ", user_path(current_user), class: "btn btn-mypage" %>
+        <% else %>
+          <%= link_to "ログイン", login_path, class: "btn btn-login" %>
+          <%= link_to "新規登録", new_user_path, class: "btn btn-signup" %>
+        <% end %>
+      </div>
+      
+      <!-- サイトタイトルを中央配置 -->
+      <div class="site-header__title">
+        <%= link_to raw("神奈川遊泳紀行"), root_path, id: "logo" %>
+      </div>
+      
+      <!-- 右端を空にしておく（バランスを取るため） -->
+      <div class="site-header__end"></div>
+    </div>
+  </div>
+</header>

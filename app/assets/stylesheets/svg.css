@@ -1,0 +1,184 @@
+/* 川崎市 */
+#kawasaki path {
+    fill: rgb(239, 112, 115) !important; /* 落ち着いた赤 */
+    
+  }
+  #kawasaki path:hover {
+    fill: rgb(219, 92, 95) !important; /* 濃い赤 */
+  }
+  
+  /* 横浜市 */
+  #yokohama path {
+    fill: rgb(255, 163, 102) !important; /* 柔らかいオレンジ */
+  }
+  #yokohama path:hover {
+    fill: rgb(235, 143, 82) !important; /* 濃いオレンジ */
+  }
+  
+  /* 相模原市 */
+  #sagamihara path {
+    fill: rgb(250, 221, 117) !important; /* 落ち着いた黄色 */
+  }
+  #sagamihara path:hover {
+    fill: rgb(230, 201, 97) !important; /* 濃い黄色 */
+  }
+  
+  /* 三浦市 */
+  #miura path {
+    fill: rgb(170, 215, 144) !important; /* 柔らかい緑 */
+  }
+  #miura path:hover {
+    fill: rgb(150, 195, 124) !important; /* 濃い緑 */
+  }
+  
+  /* 横須賀市 */
+  #yokosuka path {
+    fill: rgb(141, 199, 182) !important; /* 明るい青緑 */
+  }
+  #yokosuka path:hover {
+    fill: rgb(121, 179, 162) !important; /* 濃い青緑 */
+  }
+  
+  /* 藤沢市 */
+  #fujisawa path {
+    fill: rgb(137, 182, 223) !important; /* 柔らかい水色 */
+  }
+  #fujisawa path:hover {
+    fill: rgb(117, 162, 203) !important; /* 濃い水色 */
+  }
+  
+  /* 茅ヶ崎市 */
+  #chigasaki path {
+    fill: rgb(153, 153, 255) !important; /* 柔らかい青紫 */
+  }
+  #chigasaki path:hover {
+    fill: rgb(133, 133, 235) !important; /* 濃い青紫 */
+  }
+  
+  /* 鎌倉市 */
+  #kamakura path {
+    fill: rgb(191, 153, 255) !important; /* 柔らかい紫 */
+  }
+  #kamakura path:hover {
+    fill: rgb(171, 133, 235) !important; /* 濃い紫 */
+  }
+  
+  /* 平塚市 */
+  #hiratsuka path {
+    fill: rgb(223, 137, 191) !important; /* 柔らかいピンク */
+  }
+  #hiratsuka path:hover {
+    fill: rgb(203, 117, 171) !important; /* 濃いピンク */
+  }
+  
+  /* 小田原市 */
+  #odawara path {
+    fill: rgb(255, 182, 193) !important; /* 落ち着いたローズピンク */
+  }
+  #odawara path:hover {
+    fill: rgb(235, 162, 173) !important; /* 濃いローズピンク */
+  }
+  
+  /* 厚木市 */
+  #atsugi path {
+    fill: rgb(182, 223, 127) !important; /* 柔らかいライムグリーン */
+  }
+  #atsugi path:hover {
+    fill: rgb(162, 203, 107) !important; /* 濃いライムグリーン */
+  }
+  
+  /* 伊勢原市 */
+  #isehara path {
+    fill: rgb(255, 214, 142) !important; /* 柔らかいゴールド */
+  }
+  #isehara path:hover {
+    fill: rgb(235, 194, 122) !important; /* 濃いゴールド */
+  }
+  
+  /* 秦野市 */
+  #hadano path {
+    fill: rgb(153, 223, 223) !important; /* 柔らかいターコイズ */
+  }
+  #hadano path:hover {
+    fill: rgb(133, 203, 203) !important; /* 濃いターコイズ */
+  }
+  
+  /* 座間市 */
+  #zama path {
+    fill: rgb(255, 199, 163) !important; /* 落ち着いたベージュオレンジ */
+  }
+  #zama path:hover {
+    fill: rgb(235, 179, 143) !important; /* 濃いベージュオレンジ */
+  }
+  
+  /* 海老名市 */
+  #ebina path {
+    fill: rgb(223, 250, 127) !important; /* 柔らかい黄緑 */
+  }
+  #ebina path:hover {
+    fill: rgb(203, 230, 107) !important; /* 濃い黄緑 */
+  }
+  
+  /* 大和市 */
+  #yamato path {
+    fill: rgb(127, 199, 255) !important; /* 柔らかいスカイブルー */
+  }
+  #yamato path:hover {
+    fill: rgb(107, 179, 235) !important; /* 濃いスカイブルー */
+  }
+  
+  /* 逗子市 */
+  #zushi path {
+    fill: rgb(214, 153, 255) !important; /* 柔らかいラベンダー */
+  }
+  #zushi path:hover {
+    fill: rgb(194, 133, 235) !important; /* 濃いラベンダー */
+  }
+  
+  /* その他 */
+  #others path {
+    fill: rgb(200, 200, 200) !important; /* 淡いグレー */
+  }
+  #others path:hover {
+    fill: rgb(170, 170, 170) !important; /* 濃いグレー */
+  }
+  
+  
+  /* 各市のスタイル */
+  .city-legend-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  /* 色ボックス */
+  .color-box {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid #ccc; /* 枠線を追加 */
+  }
+  .legend-container-right {
+    display: flex; /* レジェンドを並べる方法を指定 */
+    flex-direction: column; /* 縦に並べる */
+    position: absolute;
+    top: 10px; /* 上からの位置調整 */
+    right: 0px; /* 左からの位置調整 */
+
+    border-radius: 5px;
+    z-index: 1000; /* マップより上に表示 */
+  }
+  .legend-container-left {
+    display: flex; /* レジェンドを並べる方法を指定 */
+    flex-direction: column; /* 縦に並べる */
+    position: absolute;
+    bottom: 25px; /* 上からの位置調整 */
+    left: 20px; /* 左からの位置調整 */
+
+    border-radius: 5px;
+    z-index: 1000; /* マップより上に表示 */
+  }

@@ -1,0 +1,27 @@
+.btn {
+display: inline-block;
+padding: 10px 20px;
+margin: 5px;
+font-size: 16px;
+text-decoration: none;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+.btn-city {
+background-color: #007bff;
+}
+.btn-city:hover {
+background-color: #0056b3;
+}
+.btn-back {
+    background-color: #007bff;
+}
+.btn-back:hover {
+    background-color: #0056b3;
+}
+
+
+

@@ -1,0 +1,32 @@
+@keyframes backgroundSlideshow {
+    0% {
+      background-image: url('<%= asset_path("image1.jpeg") %>');
+    }
+    25% {
+      background-image: url('<%= asset_path("image2.jpeg") %>');
+    }
+    50% {
+      background-image: url('<%= asset_path("image3.jpeg") %>');
+    }
+    75% {
+      background-image: url('<%= asset_path("image4.jpeg") %>');
+    }
+    100% {
+      background-image: url('<%= asset_path("image1.jpeg") %>');
+    }
+  }
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .svg-container {
+    animation: backgroundSlideshow 15s infinite;
+    padding: 20px;
+    background-size: cover; /* 背景を拡大してタイルを防ぐ */
+    background-repeat: no-repeat; /* タイルを無効化 */
+    background-position: center; /* 背景を中央に配置 */
+    background-attachment: scroll; /* 背景をスクロールに追従させる */
+  }

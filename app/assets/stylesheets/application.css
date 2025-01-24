@@ -1,0 +1,40 @@
+@import "header.css";
+@import "city.css";
+@import "pool.css";
+@import "home.css";
+@import "login.css";
+@import "footer.css";
+@import "mypage.css";
+@import "posts.css";
+@import "svg.css";
+
+/*
+ *= require_self
+ *= require_tree .
+ */
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+  
+
+.btn-primary {
+background-color: #007bff;
+color: #fff;
+border: none;
+
+border-radius: 5px;
+cursor: pointer;
+
+}
+
+.btn-primary:hover {
+background-color: #0056b3;
+}
+

@@ -1,0 +1,16 @@
+<div class="container">
+  <h1><%= @city.name %>の詳細ページ</h1>
+  <p>この市の詳細情報をここに表示します。</p>
+
+  <div class="pools-list">
+    <% @city.pools.each do |pool| %>
+      <div class="pool-box">
+        <h2><%= pool.name %></h2>
+        <p><%= pool.address %></p>
+        <%= link_to "このプールを見る", city_pool_path(@city.slug, pool), class: "btn btn-pool" %>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "一覧に戻る", root_path, class: "btn btn-back" %>
+</div>

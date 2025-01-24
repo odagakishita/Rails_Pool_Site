@@ -1,0 +1,23 @@
+<div class="post-container">
+    <h2><%= @post.title %></h2>
+    <h3 class="pool-name-went"><%= @post.pool&.name || "指定なし" %></h3>
+    <p>種類: <%= @post.category %></p>
+    <p>投稿日: <%= @post.created_at.strftime("%Y年%m月%d日") %></p>
+  
+    <% if @post.category == "ルーティーン" %>
+      <h3>ルーティーンの手順</h3>
+      <ol>
+        <% @post.routine_steps.each do |step| %>
+          <li><%= step %></li>
+        <% end %>
+      </ol>
+    <% elsif @post.category == "レビュー" %>
+      <h3>レビューの内容</h3>
+      
+      <p>評価: <%= @post.review_rating %> / 5</p>
+      <p>内容: <%= @post.content %></p>
+    <% end %>
+  
+    <%= link_to '記事一覧に戻る', posts_path, class: 'back-button' %>
+  </div>
+  

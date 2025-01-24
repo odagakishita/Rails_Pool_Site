@@ -1,0 +1,28 @@
+<div class="post-list-container">
+    <h1>遊泳記録まとめ</h1>
+  
+    <!-- <div class="search-form">
+      <%= form_with url: posts_path, method: :get, local: true do |f| %>
+        <%= f.label :search, "記事を検索" %>
+        <%= f.text_field :search, placeholder: "タイトルや種類を入力", class: "form-input" %>
+        <%= f.submit "検索", class: "button" %>
+      <% end %>
+    </div> -->
+    <div class="post-make-container">
+        <% if logged_in? %>
+            <%= link_to "ルーティーンを書く", new_routine_posts_path, class: "btn routine-button" %>
+            <%= link_to "レビューを書く", new_review_posts_path, class: "btn review-button" %>
+        <% end %>
+        
+    </div>
+    <div class="posts">
+      <% @posts.each do |post| %>
+        <div class="post">
+          <h2><%= link_to post.title, post_path(post), class: 'post-title' %></h2>
+          <p>種類: <%= post.category %></p>
+          <p>投稿日: <%= post.created_at.strftime("%Y年%m月%d日") %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  

@@ -1,0 +1,156 @@
+.post-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+  }
+
+
+  .add-button {
+    display: inline-block;
+    width: 40px;
+    margin-left: 20px;
+    margin-top: 17.5px;
+    text-decoration: none;
+    background-color: #ff75a7;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    border: none;
+    height: 30px;
+    text-align: center;
+  }
+
+  .routine-add-button {
+    display: flex;
+  }
+  
+  .add-button:hover {
+    background-color: #ab068f;
+  }
+  
+
+  
+  .routine-button {
+    background-color: #28a745;
+  }
+  
+  .review-button {
+    background-color: #ffc107;
+  }
+
+  .make-button {
+    background-color: #366fc0;
+  }
+
+  .post-list-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .post {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .post h2 {
+    margin: 0;
+  }
+  
+  .search-form {
+    margin-bottom: 20px;
+  }
+  
+  .back-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .back-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .post-title {
+    text-decoration: none;
+  }
+
+  .posts-preview {
+    display: flex;              /* 子要素を横並びに */
+    flex-wrap: wrap;            /* 子要素が画面幅を超えた場合に折り返す */
+    gap: 20px;                  /* 各投稿間の隙間を設定 */
+    justify-content: center;    /* 投稿を中央揃え */
+    padding: 20px;              /* 全体の余白 */
+
+    border-radius: 8px;         /* 角を丸める */
+  }
+  
+  .post-preview-box {
+    background-color: #ffffff;    /* 投稿ボックスの背景を白に */
+    border: 1px solid #ddd;       /* 薄い境界線 */
+    border-radius: 8px;           /* 角を丸める */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 少し影をつけて浮かせる */
+    padding: 15px;                /* 内側の余白 */
+    width: 300px;                 /* 各投稿の幅を固定 */
+    text-align: left;             /* テキストを左揃え */
+    transition: transform 0.2s, box-shadow 0.2s; /* ホバー時のアニメーション */
+  }
+
+  .post-box {
+    margin-bottom: 10px;
+    background-color: #ffffff;    /* 投稿ボックスの背景を白に */
+    border: 1px solid #ddd;       /* 薄い境界線 */
+    border-radius: 8px;           /* 角を丸める */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 少し影をつけて浮かせる */
+    padding: 15px;                /* 内側の余白 */
+    width: 300px;                 /* 各投稿の幅を固定 */
+  }
+  
+  .post-preview-box:hover {
+    transform: translateY(-5px);  /* ホバー時に少し浮かせる */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* ホバー時の影を強調 */
+  }
+  
+  .post-title {
+    font-size: 18px;            /* タイトルのフォントサイズ */
+    font-weight: bold;          /* 太字に */
+    color: #56a8ff;             /* ブルー系のリンク色 */
+    text-decoration: none;      /* 下線を削除 */
+    margin-bottom: 10px;        /* タイトル下に余白 */
+    display: block;             /* ブロック表示にしてクリック範囲を広げる */
+  }
+  
+  .post-title:hover {
+    color: #0056b3;             /* ホバー時に色を濃くする */
+  }
+  
+  .post-preview-box p {
+    font-size: 14px;            /* 通常のテキストフォントサイズ */
+    color: #555;                /* 落ち着いた色 */
+    margin: 5px 0;              /* 上下に少し余白 */
+  }
+  .post-make-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .post-buttons-container {
+    margin-bottom: 20px;
+  }
+    .submit-button {
+        margin-top: 15px;
+    }

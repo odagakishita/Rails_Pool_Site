@@ -1,0 +1,45 @@
+<div class="mypage-container">
+    <header class="mypage-header">
+      <h1>プロフィール編集</h1>
+    </header>
+  
+    <main class="editpage-content">
+      <%= form_with(model: @user, local: true, multipart: true) do |f| %>
+      <div class="mypage-image">
+        <%= f.label :profile_image, "プロフィール画像", class: "profile-image-label" %>
+        <%= f.file_field :profile_image, class: "profile-image-field" %>
+      </div>
+        <div>
+            <%= f.label :nickname, "ニックネーム" %><br>
+            <%= f.text_field :nickname %>
+        </div>
+        <div>
+          <%= f.label :name, "名前" %><br>
+          <%= f.text_field :name %>
+        </div>
+  
+        <div>
+          <%= f.label :email, "メールアドレス" %><br>
+          <%= f.email_field :email %>
+        </div>
+  
+        <div>
+          <%= f.label :password, "パスワード (変更しない場合は空欄のまま)" %><br>
+          <%= f.password_field :password %>
+        </div>
+  
+        <div>
+          <%= f.label :password_confirmation, "パスワード確認" %><br>
+          <%= f.password_field :password_confirmation %>
+        </div>
+  
+        <div>
+          <%= f.submit "更新する", class: "button" %>
+        </div>
+      <% end %>
+  
+      <%= link_to 'マイページに戻る', @user %>
+    </main>
+
+  </div>
+  

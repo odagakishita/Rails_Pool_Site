@@ -1,0 +1,29 @@
+<div class="mypage-container">
+    <header class="mypage-header">
+      <h1>マイページ</h1>
+    </header>
+  
+    <main class="mypage-content">
+      <div class="user-info">
+        <div class="mypage-image">
+            <% if @user.profile_image.present? %>
+                <img src="<%= @user.profile_image %>" alt="プロフィール画像" class="profile-image">
+            <% else %>
+                <p>プロフィール画像は設定されていません。</p>
+            <% end %>
+        </div>
+
+        <p><strong>ニックネーム:</strong> <%= @user.nickname %></p>
+        <p><strong>名前：</strong><%= @user.name %></p>
+        <p><strong>メールアドレス：</strong><%= @user.email %></p>
+      </div>
+      <div class="mypage-actions">
+        <% if @user == current_user %>
+          <%= link_to 'プロフィールを編集', edit_user_path(@user), class: 'button edit-button' %>
+          <%= link_to 'ログアウト', logout_path, method: :delete, class: 'button logout-button' %>
+        <% end %>
+        
+      </div>
+    </main>
+  </div>
+  

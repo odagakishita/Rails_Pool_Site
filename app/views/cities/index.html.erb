@@ -1,0 +1,8 @@
+<h1>市区町村一覧</h1>
+<ul>
+  <% @cities.each do |city| %>
+    <li>
+      <%= link_to city.name, city_path(city), class: "btn btn-city" %>
+    </li>
+  <% end %>
+</ul>

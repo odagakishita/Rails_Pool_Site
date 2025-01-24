@@ -1,0 +1,25 @@
+<div class="post-container">
+  <h2>ルーティーン投稿</h2>
+  <%= form_with model: @post, local: true do |f| %>
+    <div>
+      <%= f.label :title, "タイトル" %><br>
+      <%= f.text_field :title, class: "form-input" %>
+    </div>
+    <div>
+      <%= f.label :pool_id, "対象プール" %><br>
+      <%= f.collection_select :pool_id, Pool.all, :id, :name, { include_blank: "選択してください" }, class: "form-select" %>
+    </div>
+    <div id="routine-steps-container">
+      <div class="routine-add-button">
+        <h3>ルーティーンの手順</h3>
+        <button type="button" id="add-routine-step" class="add-button">＋</button>
+      </div>
+      <div class="routine-step">
+        <input type="text" name="post[routine_steps][]" placeholder="手順を入力してください" class="form-input routine-step-field">
+      </div>
+      
+    </div>
+    <%= f.hidden_field :category, value: "ルーティーン" %>
+    <%= f.submit "投稿する", class: "button submit-button" %>
+  <% end %>
+</div>
