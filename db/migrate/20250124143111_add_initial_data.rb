@@ -30,7 +30,7 @@ class AddInitialData < ActiveRecord::Migration[7.0]
     # プールデータの追加
     pools = [
       { name: "川崎市民プラザ", address: "川崎市高津区", city_slug: "kawasaki", adult_price: 500, child_price: 200, indoor: true, outdoor: false, sauna: false, fifty: false, url: "https://www.kawasaki-shiminplaza.jp/sisetu/pool/" },
-      { name: "ヨネッティー王禎寺", address: "川崎市高津区", city_slug: "kawasaki", adult_price: 330, child_price: 110, indoor: true, outdoor: false, sauna: true, fifty: false, url: "https://www.sportsoasis.co.jp/sh41/" },
+      { name: "ヨネッティー王禅寺", address: "川崎市麻生区", city_slug: "kawasaki", adult_price: 330, child_price: 110, indoor: true, outdoor: false, sauna: true, fifty: false, url: "https://www.sportsoasis.co.jp/sh41/" },
       { name: "入津嵐余熱利用プール", address: "川崎市川崎区", city_slug: "kawasaki", adult_price: 520, child_price: 200, indoor: true, outdoor: false, sauna: false, fifty: true, url: "https://www.sportsoasis.co.jp/sh43/" },
       { name: "横浜市西スポーツセンター", address: "横浜市西区", city_slug: "yokohama", adult_price: 300, child_price: 100, indoor: true, outdoor: false, sauna: false, fifty: false, url: "https://www.sportsoasis.co.jp/sh47/" },
       { name: "秋葉台公園温水プール", address: "藤沢市", city_slug: "fujisawa", adult_price: 400, child_price: 100, indoor: true, outdoor: true, sauna: true, fifty: true, url: "https://f-mirai.jp/sports/pool/akibadai-2-2" },
